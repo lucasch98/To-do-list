@@ -1,23 +1,25 @@
-import React from 'react';
+import logo from './logo.svg';
 import './App.css';
-import Input from './components/Input';
-import { useState } from 'react';
-import './style-sheets/TaskPanel.css';
-import Task from './components/Task.js';
 
 function App() {
-  //const [input, setInput] = useState('Task..');
-    return (
-      <div className='App'>
-        <div className='task-panel'>
-          <h1>Todo list</h1>
-          <div className='task-list'>
-            <table>
-              <tr><Task /></tr>
-            </table>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+
 export default App;
