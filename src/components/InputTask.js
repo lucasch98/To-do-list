@@ -1,32 +1,39 @@
 import { useState } from "react";
-import "../styles/InputTask.css"
+import "../styles/InputTask.css";
 
-const InputTask = props => {
-  const { handleAddItem } = props;
-  const [task, setNewTask] = useState("");
+const InputTask = ({addTask}) =>{
+  const [task, setTask] = useState("");
 
-   const handleSubmit = (e) =>{
-    e.preventDefault();
-    console.log(e.target.value);
-    
-    handleAddItem({
-      id: Math.floor(Math.random() * 1000),
-      done: false,
-      value: task
-    });
-    setNewTask("");
-  };
+//Update state task
+const handleInput = (event) =>{
+  setTask(event.target.value);
+}
+
+//Send new task to TableTaks with function "addTask"
+const handleNewTask = (event) => {
+  event.preventDefault();
+  if(task !== ""){
+    addTask(task);
+    setTask("");
+  }else{
+    alert("Type a valid task");
+    if(task === ""){
+      setTask('');
+    }
+  }
+}
 
   return(
-    <form onSubmit={handleSubmit}>
-      <div className="todo-list-input">
-        <input id="InputTask" 
-              type="text" 
-              value={task} 
-              placeholder="Insert task..."
-              onChange={e => setNewTask(e.target.value)}/>
-        &nbsp;
-        <button type="submit" disabled={task ? "" : "disabled"} >Add Task</button> 
+    <form onSubmit={handleNewTask}>
+      <div className="rowTask">
+        <input 
+          type="text" 
+          className="InputTaskText"
+          placeholder="Insert task..."
+          onChange={handleInput}
+          value={task}
+        />
+        <button className="buttonAddTask">Add</button>
       </div>
     </form>
   );

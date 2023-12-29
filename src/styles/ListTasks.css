@@ -1,0 +1,15 @@
+.listTasks{
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  border-radius: 16%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.deleteIcon{
+  color: red;
+  cursor: pointer;
+}

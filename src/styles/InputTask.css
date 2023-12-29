@@ -1,7 +1,17 @@
-#InputTask {  
+.rowTask{
+  padding-top: 5%;
+}
+.InputTaskText {  
   align-content: center;
   align-items: center;
   justify-content: center;
   font-size: 16px;
   width: 30%;
+}
+
+.buttonAddTask{
+  color: white;
+  background-color: #4CAF50;
+  border: none;
+  cursor: pointer;
 }
