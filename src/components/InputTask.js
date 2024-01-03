@@ -24,7 +24,8 @@ const handleNewTask = (event) => {
 }
 
   return(
-    <form onSubmit={handleNewTask}>
+    <>
+    <form id="formTask" onSubmit={handleNewTask}>
       <div className="rowTask">
         <input 
           type="text" 
@@ -35,7 +36,10 @@ const handleNewTask = (event) => {
         />
         <button className="buttonAddTask">Add</button>
       </div>
+      <div id="success-message" className="success-message">¡New task added successfully!</div>
     </form>
+      <div id="delete-message" className="delete-message">¡Task deleted successfully!</div>
+    </>
   );
 }
 

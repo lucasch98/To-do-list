@@ -9,7 +9,7 @@ const TableTasks = () =>{
   //Add new task to listTasks
   const addTask = (task) =>{
     setTasks([...tasks, task]);
-    console.log(tasks);
+    messageEvent('success-message');
   }
 
   /*const updateTask = () => {
@@ -25,14 +25,24 @@ const TableTasks = () =>{
       const newTasks = [...tasks]
       newTasks.splice(indexTask, 1)
       setTasks(newTasks)
+      messageEvent('delete-message');
     }
-    
   }
 
+  const messageEvent = (message) => {
+    var eventMessage = document.getElementById(message);
+    eventMessage.style.display = 'block';
+    setTimeout(function() {
+      eventMessage.style.display = 'none';
+    }, 3000);
+  };
+
   return(
-    <div className="conteinerMain">
-      <InputTask addTask={addTask}/>
-      <ListTasks tasks={tasks} deleteTask={deleteTask}/>
+    <div className="container">
+      <div className="conteinerMain">
+        <InputTask addTask={addTask} />
+        <ListTasks tasks={tasks} deleteTask={deleteTask} />
+      </div>
     </div>
   );
 }
