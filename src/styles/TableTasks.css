@@ -1,0 +1,10 @@
+body{
+  background-color: #282c34;
+}
+
+.conteinerMain{
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+}
